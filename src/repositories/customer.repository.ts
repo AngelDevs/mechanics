@@ -1,8 +1,7 @@
 import { Customer } from '../entities/customer.entity';
 import { getRepository, Repository } from 'typeorm';
 
-export default class CustomerRepository{
-
+export default class CustomerRepository {
     private repository: Repository<Customer>;
 
     constructor() {
@@ -11,7 +10,7 @@ export default class CustomerRepository{
 
     async create(customer: Customer): Promise<Customer> {
         const results = await this.repository.save(customer);
-        if(results){
+        if (results) {
             return customer;
         }
         return;
@@ -21,3 +20,5 @@ export default class CustomerRepository{
         return await this.repository.find();
     }
 }
+
+// luilli estuvo aqui
